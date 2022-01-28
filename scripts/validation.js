@@ -9,6 +9,10 @@ function styleValidation(id, valueText, mLeft, mTop) {
     text.style.marginTop = `${mTop}`;
 }
 
+function changeInput(id) {
+    document.getElementById(`${id}`).innerHTML = '';
+}
+
 function validation() {
 
     // Name
@@ -17,6 +21,8 @@ function validation() {
 
     if(!regexName.test(nameInput) == true) {
         styleValidation('nameP', 'Preencha o nome de forma correta.', '100px', '50px');
+    } else {
+        changeInput('nameP');
     }
 
     // Email
@@ -25,16 +31,19 @@ function validation() {
 
     if(!regexEmail.test(emailInput) == true) {
         styleValidation('emailP', 'Preencha o email de forma correta.', '100px', '50px');
+    } else {
+        changeInput('emailP');
     }
 
     // Birth date
     var dateInput = document.getElementById('bDate').value;
     if(dateInput == '') {
         styleValidation('dateP', 'Preencha sua data de nascimento', '100px', '2px');
+    } else {
+        changeInput('dateP');
     }
 
     // CPF
-
     function cpfCalculo(qtdNum, cpfNumber, increment) {
         var valor = cpfNumber.substr(0, qtdNum), soma2 = 0;
         for(let i = 0; i < valor.length; i++) {
@@ -62,7 +71,7 @@ function validation() {
 
             var result1 = somaCalculo(cpfN);
             var result2 = somaCalculo(cpfN2);
-            
+
             var digito1 = cpfNumber.substr(9, 1);
             var digito2 = cpfNumber.substr(10, 1);
 
@@ -79,6 +88,8 @@ function validation() {
 
                 if(result2 != digito2) {
                     styleValidation('cpfP', 'CPF inválido', '100px','2px');
+                } else {
+                    changeInput('cpfP');
                 }
             }
         }
@@ -95,6 +106,8 @@ function validation() {
 
     if(checkbox.length == select) {
         styleValidation('checkboxP', 'Por favor, selecione alguma opção.', '60px', '2px');
+    } else {
+        changeInput('checkboxP');
     }
     
     // Textarea
@@ -102,5 +115,7 @@ function validation() {
 
     if(bioInput == '') {
         styleValidation('textareaP', 'Por favor, preencha o campo acima.', '140px', '50px');
+    } else {
+        changeInput('textareaP');
     }
 }

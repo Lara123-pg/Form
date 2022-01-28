@@ -5,6 +5,4 @@ function maskCpf() {
     } else if(cpfInput.value.length == 11) {
         cpfInput.value += '-'
     }
-    
-
 }
