@@ -24,14 +24,18 @@ label.labels, p {
     display: block;
 }
 
+input#fName, #email, #bDate, #cpf {
+    width: 250px;
+    border-radius: 10px;
+} 
+
 div.part1 {
-    padding-top: 10px;
     padding-left: 50px;
 }
 
 div.labels1 {
     width: 200px;
-    padding: 35px;
+    padding: 25px;
     margin-left: 50px;
 }
 
@@ -40,7 +44,7 @@ div.separator {
     border-left: 3px solid;
 
     margin-left: 450px;
-    margin-top: -463px;
+    margin-top: -450px;
 }
 
 div.part2 {
@@ -55,7 +59,7 @@ textarea {
 button {
     background-color: #7FFFD4;
 
-    margin-top: 60px;
+    margin-top: 120px;
     margin-left: 360px;
 
     width: 250px;
